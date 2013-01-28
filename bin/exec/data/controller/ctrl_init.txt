@@ -1,0 +1,8 @@
+0
+5
+
+#tipo formazione ---> 	0=linea
+#			1=triangolo
+#			2=diagonale
+#			3=singolo
+#distanza centro robot/pt controllato robot
