@@ -1,0 +1,25 @@
+0	
+0	
+0	
+0	
+0	
+5	
+1280
+720	
+5	
+0	
+50	2000
+3
+
+//SAVE_FRAMES: 1 for saving the acquired frame in a ppm file
+//SAVE_NORMALIZED: 1 for saving the frame after RGB color normalization.. debug only
+//sAVE_BINARY: 1 for saving binary image obtained after color segmentation in a ppm file
+//SAVE_COLOR_IMAGE: 1 for saving a color image obtained after color segmentation in a ppm file
+//SAVE_CENTROIDS: 1 for drowing the centroids of the connected components in the image and saving it
+//n_save_frame
+//DEFAULT_HOR_RESOLUTION: horizontal resolution
+//DEFAULT_VERT_RESOLUTION: vertical resolution
+//DEFAULT_FPS
+//LOGGING: 1 for logging in a file
+//blob min size		blob max size
+//numero di robot

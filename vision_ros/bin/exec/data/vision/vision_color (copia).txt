@@ -1,0 +1,27 @@
+4
+4
+1
+15	72	101	127	153	199
+59	107	132	158	92	116
+41	174	80	123	97	141
+44	176	80	124	103	141
+255	0	0
+0	200	255
+158	242	29
+242	234	28
+
+//In ordine le righe sono:
+//1: numero max di colori a disposizione
+//2: numero di colori da utilizzare
+//3: id per il common color
+//Codifica colori YCbCr
+//Per ogni colore:Y_min	Y_max	Cb_min	Cb_max	Cr_min	Cr_max
+//4: red 
+//5: cyan 
+//6: green 
+//7: yellow
+//Codifica colori RGB
+//8: red
+//9: cyan
+//10: green
+//11: yellow
