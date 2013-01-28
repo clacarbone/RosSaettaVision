@@ -67,7 +67,7 @@ void main_loop(){
 
 }
 
-void main(int argc, char argv[]) {
+void main(int argc, char *argv[]) {
 
     // Setup termination handler
     setup_termination();
@@ -77,6 +77,5 @@ void main(int argc, char argv[]) {
     
     // Main Loop
     main_loop();
-    
     
 }
