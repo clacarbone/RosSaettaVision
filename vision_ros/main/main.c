@@ -4,6 +4,10 @@
 #include "couples.h"
 
 
+char		*vision_map;
+char		*vision_map_sphere = "data/vision/Mappa90.txt\0";
+
+
 void init_all() {
 
 
