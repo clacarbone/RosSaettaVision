@@ -34,6 +34,7 @@
 		6576A0B916B6C1FD0036C66D /* matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
 		6576A0BA16B6C1FD0036C66D /* matrix.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = matrix.o; sourceTree = "<group>"; };
 		6576A0C516B6D0A70036C66D /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		6576A0C616B6D1A30036C66D /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -98,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				6576A0C516B6D0A70036C66D /* main.c */,
+				6576A0C616B6D1A30036C66D /* Makefile */,
 			);
 			path = main;
 			sourceTree = "<group>";

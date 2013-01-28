@@ -9,7 +9,7 @@ INSTDIR = $(prefix)/usr/bin
 CFLAGS += `c_urg-config --cflags`
 #Linker flags
 #LDFLAGS+= -lm -lpthread -D_REENTRANT -lxbee -lrobotcore  -lconsole -lconsensus -lvision -lvision_laser -lvisionprocessing -lkalman -lparticle -lrobot_comm -lausiliarie -lrobot_sensors -lserial_comm -liphone -lpic2netus -lviapointservoing -lobstavoid -lhokuyomiddle `c_urg-config --libs` 
-LDFLAGS+= -lm -lpthread -D_REENTRANT -lvision -lmathematics 
+LDFLAGS+= -lm -lpthread -D_REENTRANT -lvision -lmathematics -lgsl -lgslcblas 
 #---------------------------------------#
 
 #main rule
