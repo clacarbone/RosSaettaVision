@@ -1,0 +1,80 @@
+vision/labelling.c:		intListElement = comp->pixelList->head;
+vision/labelling.c:		if (comp->pixelList->count>BLOB_MIN_SIZE) {
+vision/labelling.c:			for(j=0;j<comp->pixelList->count;j++){
+vision/labelling.c:				comp->centroidRow = SumRow/comp->pixelList->count;
+vision/labelling.c:				comp->centroidRow = 0;
+vision/labelling.c:				comp->centroidCol = SumCol/comp->pixelList->count;
+vision/labelling.c:				comp->centroidCol = 0;
+vision/labelling.c:			printf("Component %d : [Centroid Row, Centroid Col] = : [%d,%d]\n",i,comp->centroidRow,comp->centroidCol);
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol] = RED ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol - 1] = RED ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol + 1] = RED ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol - 2] = RED ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol + 2] = RED ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol + ImageWidth] = RED ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol - ImageWidth] = RED ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol + 2*ImageWidth] = RED ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol - 2*ImageWidth] = RED ;
+vision/labelling.c:			//printf(" Pixel count of the ignored component = %d\n",comp->pixelList->count);
+vision/labelling.c:		intListElement = comp->pixelList->head;
+vision/labelling.c:		if ((comp->pixelList->count>BLOB_MIN_SIZE) & (comp->pixelList->count<BLOB_MAX_SIZE)) {
+vision/labelling.c:			for(j=0;j<comp->pixelList->count;j++){
+vision/labelling.c:				comp->centroidRow = SumRow/comp->pixelList->count;
+vision/labelling.c:				comp->centroidRow = 0;
+vision/labelling.c:				comp->centroidCol = SumCol/comp->pixelList->count;
+vision/labelling.c:				comp->centroidCol = 0;
+vision/labelling.c:			//printf("Component %d : color %d [Centroid Row, Centroid Col] = : [%d,%d]\n",i,comp->color,comp->centroidRow,comp->centroidCol); //GIO
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol] = CROSS ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol - 1] = CROSS ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol + 1] = CROSS ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol - 2] = CROSS ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol + 2] = CROSS ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol + ImageWidth] = CROSS ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol - ImageWidth] = CROSS ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol + 2*ImageWidth] = CROSS ;
+vision/labelling.c:			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol - 2*ImageWidth] = CROSS ;
+vision/labelling.c:			//printf(" Pixel count of the ignored component = %d\n",comp->pixelList->count);
+vision/coordinates.c:		if ( comp->pixelList->count>BLOB_MIN_SIZE) {
+vision/coordinates.c:			centroidIndex = comp->centroidRow*imageCols + comp->centroidCol;
+vision/coordinates.c:			comp->centroidX = pixelMap->x_coord[centroidIndex];
+vision/coordinates.c:			comp->centroidY = pixelMap->y_coord[centroidIndex];
+vision/coordinates.c:			//printf("Cartesian [coordinates]/pixelIndex of component %d centroid :  [%f , %f]/%d  \n",i,comp->centroidX,comp->centroidY,centroidIndex);
+vision/coordinates.c:			//printf("Cartesian [coordinates]/pixelIndex of component %d centroid :  [%f , %f , %f , %f]/%d  \n",i,comp->centroidX,comp->centroidY,centroidIndex,comp->centroid_distance,comp->centroid_angle);
+vision/coordinates.c:				LogCoordData(comp->centroidX,comp->centroidY,timestamp,compList->count );
+vision/coordinates.c:				//fprintf(cam_log_file,"\t %f \t %f \t %ld \t %d\n",comp->centroidX,comp->centroidY,timestamp,compList->count );
+vision/coordinates.c:				packet_data[i*2] = comp->centroidX;
+vision/coordinates.c:				packet_data[i*2+1] = comp->centroidY;
+vision/coordinates.c:		if ( (comp->pixelList->count>BLOB_MIN_SIZE) & (comp->pixelList->count<BLOB_MAX_SIZE) ) {
+vision/coordinates.c:			centroidIndex = comp->centroidRow*imageCols + comp->centroidCol;
+vision/coordinates.c:			comp->centroidX = pixelMap->x_coord[centroidIndex]/10.0;
+vision/coordinates.c:			comp->centroidY = pixelMap->y_coord[centroidIndex]/10.0;
+vision/coordinates.c:			float temp1=comp->centroidX;
+vision/coordinates.c:         		float temp2=comp->centroidY;
+vision/coordinates.c:			comp->centroid_distance=GetDistCentroidBlob(temp1,temp2);
+vision/coordinates.c:			comp->centroid_angle=GetAngleCentroidBlob(temp1,temp2);
+vision/coordinates.c:			//printf("Cartesian [coordinates]/pixelIndex of component %d centroid :  [%f , %f]/%d  \n",i,comp->centroidX,comp->centroidY,centroidIndex);
+vision/coordinates.c:			//printf("component %d centroid with color %d [X,Y] = [%f ,%f] \n",i,comp->color,comp->centroidX,comp->centroidY);
+vision/coordinates.c:			//printf("[X,%f ,Y,%f , Distance,%f , Angle,%f] \n",comp->centroidX,comp->centroidY,comp->centroid_distance,comp->centroid_angle);
+vision/coordinates.c:			printf("Component %d, color %d [X,%f ,Y,%f , Distance,%f , Angle,%f] \n",i,comp->color,comp->centroidX,comp->centroidY,comp->centroid_distance,comp->centroid_angle);
+vision/coordinates.c:				LogCoordDataEvo(comp->centroidX,comp->centroidY,timestamp,compList->count,comp->color);
+vision/coordinates.c:				//fprintf(cam_log_file,"\t %f \t %f \t %ld \t %d\n",comp->centroidX,comp->centroidY,timestamp,compList->count );
+vision/coordinates.c:				packet_data[i*2] = comp->centroidX;
+vision/coordinates.c:				packet_data[i*2+1] = comp->centroidY;
+vision/coordinates.c:	if ( (comp->pixelList->count>BLOB_MIN_SIZE) && (comp->pixelList->count<BLOB_MAX_SIZE) ) {
+vision/coordinates.c:	if ( (comp->pixelList->count>BLOB_MIN_SIZE) && (comp->pixelList->count<BLOB_MAX_SIZE) ) {
+vision/coordinates.c:		centroidIndex = comp->centroidRow*imageCols + comp->centroidCol;
+vision/coordinates.c:		printf("ROW:%d COL:%d\n",comp->centroidRow,comp->centroidCol);
+vision/coordinates.c:		comp->centroidX = pixelMap->x_coord[centroidIndex]/10;
+vision/coordinates.c:		comp->centroidY = pixelMap->y_coord[centroidIndex]/10;
+vision/coordinates.c:		comp->centroid_distance=GetDistCentroidBlob(comp->centroidX,comp->centroidY);
+vision/coordinates.c:		comp->centroid_angle=GetAngleCentroidBlob(comp->centroidX,comp->centroidY);
+vision/coordinates.c:		//printf("Cartesian [coordinates]/pixelIndex of component %d centroid :  [%f , %f]/%d  \n",i,comp->centroidX,comp->centroidY,centroidIndex);
+vision/coordinates.c:		//printf("component %d centroid with color %d [X,Y] = [%f ,%f] \n",i,comp->color,comp->centroidX,comp->centroidY);
+vision/coordinates.c:		printf("Component %d, color %d [X,%f ,Y,%f , Distance,%f , Angle,%f] \n",i,comp->color,comp->centroidX,comp->centroidY,comp->centroid_distance,comp->centroid_angle);
+vision/coordinates.c:		(*colorBList)->blobs[j].color=comp->color;
+vision/coordinates.c:		(*colorBList)->blobs[j].centroidX=comp->centroidX;
+vision/coordinates.c:		(*colorBList)->blobs[j].centroidY=comp->centroidY;
+vision/coordinates.c:		(*colorBList)->blobs[j].centroid_distance=comp->centroid_distance;
+vision/coordinates.c:		(*colorBList)->blobs[j].centroid_angle=comp->centroid_angle;			
+vision/coordinates.c:			 LogCoordDataEvo(comp->centroidX,comp->centroidY,timestamp,compList->count,comp->color);
+vision/coordinates.c:			 //fprintf(cam_log_file,"\t %f \t %f \t %ld \t %d\n",comp->centroidX,comp->centroidY,timestamp,compList->count );

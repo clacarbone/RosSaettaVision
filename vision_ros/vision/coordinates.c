@@ -263,7 +263,7 @@ int GetCoordinatesEvo(ComponentsList *compList, PixelMap *pixelMap, FILE *log_fi
 			//printf("component %d centroid with color %d [X,Y] = [%f ,%f] \n",i,comp->color,comp->centroidX,comp->centroidY);
 			//printf("[X,%f ,Y,%f , Distance,%f , Angle,%f] \n",comp->centroidX,comp->centroidY,comp->centroid_distance,comp->centroid_angle);
 			
-			printf("Component %d, color %d [X,%f ,Y,%f , Distance,%f , Angle,%f] \n",i,comp->color,comp->centroidX,comp->centroidY,comp->centroid_distance,comp->centroid_angle);
+//			printf("Component %d, color %d [X,%f ,Y,%f , Distance,%f , Angle,%f] \n",i,comp->color,comp->centroidX,comp->centroidY,comp->centroid_distance,comp->centroid_angle);
 
 			
 		// } 	// We log only if a significan blob has been found [Andrea]

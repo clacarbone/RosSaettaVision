@@ -6,16 +6,21 @@
 
 char		*vision_map;
 char		*vision_map_sphere = "data/vision/Mappa90.txt\0";
+char		*vision_mode;
+char		*vision_mode_sphere = "sphere_\0";
 
 
 void init_all() {
 
 
     globals_init();
-    
+
+//    GetLogFileName(log_fname);    
     InitCamera();
+//    InitLogs(vision_mode);
     vision_map = vision_map_sphere;
-    
+    vision_mode = vision_mode_sphere;
+ 
     InitPixelMap(vision_map);
     CreateColorStruct(&colorStruct); //struttura contenente le informazione dei colori
     
@@ -26,7 +31,8 @@ void init_all() {
 void termination_handler(int signum) {
     
     CloseCamera();
-    
+//    CloseLogs();    
+
     exit(0);
 }
 

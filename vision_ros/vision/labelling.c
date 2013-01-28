@@ -847,9 +847,10 @@ int ComputeCentroids( ComponentsList *compList, BWImage *bwIm ){
 			else{
 				comp->centroidCol = 0;
 			}
-			
+#ifdef  LABELLING_DEBUG	
 			printf("Component %d : [Centroid Row, Centroid Col] = : [%d,%d]\n",i,comp->centroidRow,comp->centroidCol);
-			
+		
+#endif	
 			//Draw a red X in the binaryImage in corrispondence of the centrois 
 			
 			bwIm->data[comp->centroidRow*ImageWidth + comp->centroidCol] = RED ;

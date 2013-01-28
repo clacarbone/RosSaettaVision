@@ -85,11 +85,11 @@ int minima_distanza(matrix_p pt,coupleList *list){
 	float d;
 	x1=pt->val[0][0];
 	y1=pt->val[1][0];
-	printf("PUNTO %f %f\n",x1,y1);
+	printf("Point %f %f\n",x1,y1);
 	for(i=0;i<cplList->numCpl;i++){				
 		x2=cplList->cpl[i].coord->val[0][0];
 		y2=cplList->cpl[i].coord->val[1][0];
-		printf("COPPIA %f %f\n",x2,y2);
+		printf("Pair %f %f\n",x2,y2);
 		d=fabs(sqrt(powf((x1-x2),2)+powf((y1-y2),2)));
 		printf("DIST PT/CPL %f\n",d);
 		if(d<dmin){

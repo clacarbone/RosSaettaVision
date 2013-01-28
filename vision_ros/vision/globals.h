@@ -62,7 +62,7 @@
 #define DEFAULT_V4L2_FMT  V4L2_PIX_FMT_YUYV 	// Standard capture format for Creative camera (uvcvideo )
 
 
-#define PRINT_VISION
+//#define PRINT_VISION
 //=============================================
 //
 // 				Global variables 
