@@ -65,7 +65,9 @@ void main_loop(){
             }
         }
 
+    }
 }
+
 
 void main(int argc, char *argv[]) {
 
