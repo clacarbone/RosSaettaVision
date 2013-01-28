@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		6576A09916B6BE150036C66D /* vision.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vision.c; sourceTree = "<group>"; };
 		6576A09C16B6BE370036C66D /* coordinates.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = coordinates.c; sourceTree = "<group>"; };
 		6576A09D16B6BE370036C66D /* coordinates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = coordinates.h; sourceTree = "<group>"; };
 		6576A09E16B6BE370036C66D /* couples.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = couples.c; sourceTree = "<group>"; };
@@ -34,13 +33,14 @@
 		6576A0B816B6C1FD0036C66D /* matrix.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = matrix.c; sourceTree = "<group>"; };
 		6576A0B916B6C1FD0036C66D /* matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
 		6576A0BA16B6C1FD0036C66D /* matrix.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = matrix.o; sourceTree = "<group>"; };
+		6576A0BD16B6C7C30036C66D /* vision.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vision.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		6576A08D16B6BDA90036C66D = {
 			isa = PBXGroup;
 			children = (
-				6576A09916B6BE150036C66D /* vision.c */,
+				6576A0BC16B6C7C30036C66D /* main */,
 				6576A0B616B6C1FD0036C66D /* mathematics */,
 				6576A09B16B6BE370036C66D /* vision */,
 			);
@@ -92,6 +92,14 @@
 				6576A0BA16B6C1FD0036C66D /* matrix.o */,
 			);
 			path = mathematics;
+			sourceTree = "<group>";
+		};
+		6576A0BC16B6C7C30036C66D /* main */ = {
+			isa = PBXGroup;
+			children = (
+				6576A0BD16B6C7C30036C66D /* vision.c */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
