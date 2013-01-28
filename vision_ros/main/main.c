@@ -61,7 +61,7 @@ void main_loop(){
             if (coppia_valida(cplList->cpl[j])) {
                 coord=cplList->cpl[j].coord;
                 printf("Detected Marker: %d\n",j);
-                printf("Coordinates: %2.2f %2.2f %2.2f\n ", coord[0][0], coord[1][0], coord[2][0]);
+                printf("Coordinates: %2.2f %2.2f %2.2f\n ", coord->val[0][0], coord->val[1][0], coord->val[2][0]);
             }
         }
 
