@@ -1,14 +1,24 @@
 /// Steps
-
-#include "globals.h"
-#include "couples.h"
-
+#include <stdio.h>
+#include <globals.h>
+#include <couples.h>
+#include <dirent.h>
 
 char		*vision_map;
 char		*vision_map_sphere = "data/vision/Mappa90.txt\0";
 char		*vision_mode;
 char		*vision_mode_sphere = "sphere_\0";
 
+int file_exists(const char * filename)
+{
+    FILE * file;
+    if (file = fopen(filename, "r"))
+    {
+        fclose(file);
+        return 1;
+    }
+    return 0;
+}
 
 void init_all() {
 
@@ -75,11 +85,30 @@ void main_loop(){
 }
 
 
-void main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 
+    printf ("The current working directory is %s\n", argv[0]);
     // Setup termination handler
     setup_termination();
+    chdir("./dist/Debug/GNU-Linux-x86");
+    int res = file_exists(INIT_FILE);
+    res ? printf("%s exists\n",INIT_FILE) : printf("File doesn't exist\n");
     
+    
+    /*DIR *dir;
+    struct dirent *ent;
+    if ((dir = opendir ("./")) != NULL) {
+      // print all the files and directories within directory 
+      while ((ent = readdir (dir)) != NULL) {
+        printf ("%s\n", ent->d_name);
+      }
+      closedir (dir);
+    } else {
+      // could not open directory 
+      perror ("");
+      return EXIT_FAILURE;
+    }
+    return 0;*/
     // Init All
     init_all();
     

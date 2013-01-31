@@ -40,8 +40,9 @@ void globals_init(){
 	
 	FILE *ff;
     ff=fopen(INIT_FILE,"r");
+    
     if(ff==NULL) 
-	printf("Error on file opening\n");
+        printf("Error on file opening\n");
     fscanf(ff,"%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\n%d\t%d\n%d", &SAVE_FRAMES, &SAVE_NORMALIZED, &SAVE_BINARY, &SAVE_COLOR_IMG, &SAVE_CENTROIDS, &n_save_frame, &DEFAULT_HOR_RESOLUTION, &DEFAULT_VERT_RESOLUTION, &DEFAULT_FPS, &LOGGING,&BLOB_MIN_SIZE,&BLOB_MAX_SIZE,&numRobots);
     fclose(ff);
 

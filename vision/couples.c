@@ -182,11 +182,17 @@ m2List = (markerList *)malloc( sizeof( markerList ) );
 m2List->numMarker=numGreen;
 m2List->markers = (marker *)malloc(sizeof(marker)*(m2List->numMarker));
 
+int i;
+
 if(cplList!=NULL){
-	if((cplList)->cpl!=NULL){
-		free(cplList->cpl);
-	}
+//	if((cplList)->cpl!=NULL){
+    for(i=0;i<cplList->numCpl;i++){
+		free_matrix(cplList->cpl[i].coord);
+    }
+    free(cplList->cpl);
+//	}
 	free(cplList);
+    cplList=NULL;
 }
 
 int result=GSL_MIN (numRed, numGreen);
@@ -194,7 +200,7 @@ cplList = (coupleList *)malloc( sizeof( coupleList ) );
 cplList->numCpl=result;
 cplList->cpl = (couple *)malloc(sizeof(couple)*(cplList->numCpl));
 
-int i;
+
 
 for(i=0;i<cplList->numCpl;i++){
 		new_matrix(&(cplList->cpl[i].coord));
