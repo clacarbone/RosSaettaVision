@@ -21,7 +21,7 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux-x86
+CND_PLATFORM=GNU-None
 CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
@@ -52,17 +52,17 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-Wl,-rpath,../vision/Vision/dist/Debug/CLang-Linux-x86 -L../vision/Vision/dist/Debug/CLang-Linux-x86 -lVision -Wl,-rpath,../robot/Robot/dist/Debug/GNU-Linux-x86 -L../robot/Robot/dist/Debug/GNU-Linux-x86 -lRobot -Wl,-rpath,../mathematics/Mathematics/dist/Debug/GNU-Linux-x86 -L../mathematics/Mathematics/dist/Debug/GNU-Linux-x86 -lMathematics
+LDLIBSOPTIONS=-L../vision/Vision/dist/Debug/GNU-None -lVision -L../robot/Robot/dist/Debug/GNU-None -lRobot -L../mathematics/Mathematics/dist/Debug/GNU-None -lMathematics
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../vision/Vision/dist/Debug/CLang-Linux-x86/libVision.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../vision/Vision/dist/Debug/GNU-None/libVision.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../robot/Robot/dist/Debug/GNU-Linux-x86/libRobot.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../robot/Robot/dist/Debug/GNU-None/libRobot.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../mathematics/Mathematics/dist/Debug/GNU-Linux-x86/libMathematics.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../mathematics/Mathematics/dist/Debug/GNU-None/libMathematics.so
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}

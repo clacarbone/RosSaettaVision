@@ -7,13 +7,13 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Linux-x86
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
+CND_PLATFORM_Debug=GNU-None
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-None
 CND_ARTIFACT_NAME_Debug=visionnode
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/visionnode
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-None/visionnode
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-None/package
 CND_PACKAGE_NAME_Debug=visionnode.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/visionnode.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-None/package/visionnode.tar
 # Release configuration
 CND_PLATFORM_Release=None-Linux-x86
 CND_ARTIFACT_DIR_Release=dist/Release/None-Linux-x86
