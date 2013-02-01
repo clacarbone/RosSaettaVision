@@ -189,7 +189,9 @@ if(cplList!=NULL){
     for(i=0;i<cplList->numCpl;i++){
 		free_matrix(cplList->cpl[i].coord);
     }
-    free(cplList->cpl);
+    if (cplList->numCpl>0) {
+        free(cplList->cpl);
+    }
 //	}
 	free(cplList);
     cplList=NULL;

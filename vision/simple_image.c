@@ -113,7 +113,8 @@ void DestroyColorStruct(ColorStruct *colorStruct) {
 //=============================================================================
 
 int ProcessFrameEvol(){
-		
+
+        
 	// Apply a color threshold to the frame and put the result in a 
 	// matrix which represent a colors codified image
 	#ifdef PRINT_VISION	
@@ -144,11 +145,14 @@ int ProcessFrameEvol(){
 		printf("Labelling image number %d\n",frame_counter);	
 	#endif	
 	#endif
-		
+
+    
+	printf("%x\n",compList);
+        if (compList==NULL) {
 	if ( CreateComponentsList(&compList,2) != 0 ) {
 		return -1;
 	}
-		
+        }
 	if ( PerformLabellingColor(bwIm,compList, colorStruct->maxColor) != 0 )	{
 		return -1;
 	}
@@ -191,8 +195,8 @@ int ThresholdFrameMultiColor(FRAME *fr, BWImage *bwIm){
 
 	ymin=crmin=cbmin=255;
 	ymax=crmax=cbmax=0;
-
-	soglie = fopen(FILE_SOGLIE,"a");
+        
+//	soglie = fopen(FILE_SOGLIE,"a");
 		
 	//Add one line of black pixels at the beginning for centroid extraction step
 	for (i=0; i<bwIm->cols;i++){
@@ -584,7 +588,7 @@ fprintf(soglie,"%d\t%d\t%d\t%d\t%d\t%d\n",ymin,ymax,cbmin,cbmax,crmin,crmax);
 	if((i>220+151*640) && (i<220+155*640))
 		printf("GREEN: Y: %d, Cr: %d, Cb: %d\n",Y,Cr,Cb);*/
 }
-fclose(soglie);
+//fclose(soglie);
 	return 0;
 }
 //=============================================================================

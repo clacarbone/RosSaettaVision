@@ -100,7 +100,7 @@ typedef struct
 ///
 //------------------------------------------------------------------------------
 
-int CreateLabels(Labels **labels, int rows, int cols);
+int CreateLabels(Labels *labels, int rows, int cols);
 
 //------------------------------------------------------------------------------
 ///

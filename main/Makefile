@@ -6,7 +6,7 @@ OBJS      = main.o
 #Installation Directory
 INSTDIR = $(prefix)/usr/bin
 #Compiler flags
-CFLAGS += `c_urg-config --cflags`
+#CFLAGS += `c_urg-config --cflags`
 #Linker flags
 #LDFLAGS+= -lm -lpthread -D_REENTRANT -lxbee -lrobotcore  -lconsole -lconsensus -lvision -lvision_laser -lvisionprocessing -lkalman -lparticle -lrobot_comm -lausiliarie -lrobot_sensors -lserial_comm -liphone -lpic2netus -lviapointservoing -lobstavoid -lhokuyomiddle `c_urg-config --libs` 
 LDFLAGS+= -lm -lpthread -D_REENTRANT -lvision -lmathematics -lgsl -lgslcblas 
@@ -18,12 +18,12 @@ all: $(PROGS)
 
 #replace rule for .c source files
 .c.o:	
-	$(CC) -fpic -shared -c $(CFLAGS) -o $@ $< -I../bin/include -L../bin/librerie
+	$(CC) -fpic -shared -g -c $(CFLAGS) -o $@ $< -I../bin/include -L../bin/librerie
 #-------------------------------#
 
 #linking
 $(PROGS): $(OBJS) 
-	$(CC) $(OBJS)  -O2 -I../bin/include -L../bin/librerie $(LDFLAGS) -o $(PROGS)
+	$(CC) $(OBJS) -I../bin/include -L../bin/librerie $(LDFLAGS) -o $(PROGS)
 #-------------------------------#
 
 #Installation rule

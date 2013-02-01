@@ -323,7 +323,7 @@ return 0;
 
 int CreateComponentsList(ComponentsList **list, int type)
 {
-	*list = (ComponentsList*)malloc(sizeof(ComponentsList));
+	*list = (ComponentsList*) malloc(sizeof(ComponentsList));
 
 	if (*list == NULL)
 	{
@@ -400,8 +400,8 @@ int PopComponent(ComponentsList* list, Component *c)
 	}
 	
 	if(list->count == 0)
-	{
-		printf("PopComponent: Cannot pop, list is empty!\n");
+	{                
+                printf("PopComponent: Cannot pop, list is empty!\n");
 		return -1;
 	}
 	
@@ -424,6 +424,11 @@ int PopComponent(ComponentsList* list, Component *c)
 	
 	//decrement the list->count counter.
 	list->count--;
+        
+        if (list->count==0) {
+            list->tail=NULL;
+        }
+        
 	
 	return 0;
 }

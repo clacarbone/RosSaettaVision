@@ -13,7 +13,7 @@ all: $(PROGS)
 
 #replace rule for .c source files
 .c.o:	
-	$(CC) -Wall -fpic -shared -c -o $@ $< -I../bin/include
+	$(CC) -Wall -g -fpic -shared -c -o $@ $< -I../bin/include
 #-------------------------------#
 
 #linking library

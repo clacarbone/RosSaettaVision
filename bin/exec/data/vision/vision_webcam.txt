@@ -1,14 +1,1 @@
-30
-1
-312
-240
-115
-98
--50
-//brightness
-//exposure_auto
-//exposure_absolute
-//contrast
-//saturation
-//gamma
-//hue
+../../../../vision/data/vision_webcam.txt

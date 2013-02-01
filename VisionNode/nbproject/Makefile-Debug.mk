@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-Wl,-rpath,../vision/Vision/dist/Debug/GNU-Linux-x86 -L../vision/Vision/dist/Debug/GNU-Linux-x86 -lVision -Wl,-rpath,../robot/Robot/dist/Debug/GNU-Linux-x86 -L../robot/Robot/dist/Debug/GNU-Linux-x86 -lRobot -Wl,-rpath,../mathematics/Mathematics/dist/Debug/GNU-Linux-x86 -L../mathematics/Mathematics/dist/Debug/GNU-Linux-x86 -lMathematics
+LDLIBSOPTIONS=-Wl,-rpath,../vision/Vision/dist/Debug/GNU-Linux-x86 -L../vision/Vision/dist/Debug/GNU-Linux-x86 -lVision -Wl,-rpath,../robot/Robot/dist/Debug/GNU-Linux-x86 -L../robot/Robot/dist/Debug/GNU-Linux-x86 -lRobot -Wl,-rpath,../mathematics/Mathematics/dist/Debug/CLang-Linux-x86 -L../mathematics/Mathematics/dist/Debug/CLang-Linux-x86 -lMathematics
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -62,7 +62,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../vision/Vision/dist/Deb
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../robot/Robot/dist/Debug/GNU-Linux-x86/libRobot.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../mathematics/Mathematics/dist/Debug/GNU-Linux-x86/libMathematics.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ../mathematics/Mathematics/dist/Debug/CLang-Linux-x86/libMathematics.so
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/visionnode: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}

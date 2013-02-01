@@ -48,17 +48,18 @@
 
 //------------------------------------------------------------------------------
 
-int CreateLabels( Labels **labels, int rows, int cols )
+int CreateLabels( Labels *labels, int rows, int cols )
 {
 	int i;
-	*labels = (Labels *)malloc( sizeof( Labels ) );
+//	*labels = (Labels *) malloc( sizeof( Labels ) );
 	
-	(*labels)->rows = rows;
-	(*labels)->cols = cols;
-	(*labels)->data = (int*)malloc((rows*cols)*sizeof(int));
+        printf("done\n");
+	(labels)->rows = rows;
+	(labels)->cols = cols;
+	(labels)->data = (int*)malloc((rows*cols)*sizeof(int));
 	
-	for(i=0;i<(*labels)->rows*(*labels)->cols;i++){
-		(*labels)->data[i] = 0;
+	for(i=0;i<(labels)->rows*(labels)->cols;i++){
+		(labels)->data[i] = 0;
 	}
 	
 	return 0;
@@ -69,7 +70,7 @@ int CreateLabels( Labels **labels, int rows, int cols )
 void DestroyLabels( Labels *labels )
 {
 	free( labels->data );
-	free( labels );
+//	free( labels );
 }
 //==============================================================================
 
@@ -80,7 +81,7 @@ int PerformLabellingColor(BWImage *bwIm, ComponentsList *compList, int maxColor)
 	Component *compPt;        
 	int labelCounter = 2;       //label counter
 	int label;
-	Labels *labels;             //copy of the color image with different labels for each connected component  
+	Labels labels;             //copy of the color image with different labels for each connected component  
 	
 	#ifdef LABELLING_DEBUG	
 	//debug stuff
@@ -88,7 +89,8 @@ int PerformLabellingColor(BWImage *bwIm, ComponentsList *compList, int maxColor)
 	#endif
 	
 	label = labelCounter;
-	
+
+        
 	CreateLabels(&labels,bwIm->rows,bwIm->cols);
 		
 	// scan the color image from top left to bottom right, start from the second line because the first is a dummy black one.
@@ -113,7 +115,7 @@ int PerformLabellingColor(BWImage *bwIm, ComponentsList *compList, int maxColor)
 			 then it belongs to an external contour of a newly encountered
 			 connected component */
 			
-			if ( (labels->data[i] == 0) && (bwIm->data[i-bwIm->cols] == 0) ) {
+			if ( (labels.data[i] == 0) && (bwIm->data[i-bwIm->cols] == 0) ) {
 				
 				label = labelCounter;
 								
@@ -141,7 +143,7 @@ int PerformLabellingColor(BWImage *bwIm, ComponentsList *compList, int maxColor)
 				#endif
 				
 				//label the pixel
-				labels->data[i] = label;
+				labels.data[i] = label;
 				#ifdef LABELLING_DEBUG
 				printf("Labelled pixel [%d,%d] with label %d\n", i/ImageWidth,i%ImageWidth,label);  
 				PrintLabels(labels);
@@ -153,7 +155,7 @@ int PerformLabellingColor(BWImage *bwIm, ComponentsList *compList, int maxColor)
 				printf("Starting ContourTracing\n");
 				getchar(); 
 				#endif
-				ContourTracingColor(bwIm,labels,compList,i,1,label,pixel);
+				ContourTracingColor(bwIm,&labels,compList,i,1,label,pixel);
 				
 				//Increment connected components counter 
 				labelCounter++;
@@ -165,21 +167,21 @@ int PerformLabellingColor(BWImage *bwIm, ComponentsList *compList, int maxColor)
 				 if the south neighbour of the pixel is unmarked and black,
 				 then it belongs to an internal contour*/
 				
-				if ( ( bwIm->data[i+bwIm->cols] == 0) && (labels->data[i+bwIm->cols] != MARK ) ){
+				if ( ( bwIm->data[i+bwIm->cols] == 0) && (labels.data[i+bwIm->cols] != MARK ) ){
 					#ifdef LABELLING_DEBUG
 					printf("Step 2: current pixel = %d\n",i);
 					getchar();
 					#endif
 					// if the current pixel is already labelled, then it belongs to an external contour, too.              
-					if ( ( labels->data[i] > 0 ) ) {
-						label = labels->data[i];
+					if ( ( labels.data[i] > 0 ) ) {
+						label = labels.data[i];
 					}
 					// if this is not the case, the its west neighbour has to be labelled, so label the current pixel
 					// with the same label
 					
 					else {
-						label = labels->data[i-1];  
-						labels->data[i] = label;
+						label = labels.data[i-1];  
+						labels.data[i] = label;
 						
 						//Add the pixel to the respective connected component
 						AddPixelToComponent(compList,label,i);
@@ -191,16 +193,16 @@ int PerformLabellingColor(BWImage *bwIm, ComponentsList *compList, int maxColor)
 						
 					}
 					// in both cases trace the internal contour
-					ContourTracingColor(bwIm,labels,compList,i,2,label,pixel);  
+					ContourTracingColor(bwIm,&labels,compList,i,2,label,pixel);  
 					//printf("label = %d\n",label);       
 				}  
 				
 				/* STEP 3 : if the pixel was not processed during steps 1 and 2, it doesn't belong to a contour,
 				 so just label it with is west neighbour label*/
 				else {
-					if (labels->data[i] == 0){
-						label = labels->data[i-1];
-						labels->data[i] = label;
+					if (labels.data[i] == 0){
+						label = labels.data[i-1];
+						labels.data[i] = label;
 						
 						//Add the pixel to the respective connected component
 						AddPixelToComponent(compList,label,i);
@@ -230,7 +232,8 @@ int PerformLabellingColor(BWImage *bwIm, ComponentsList *compList, int maxColor)
 	getchar();
 	#endif
 	
-	DestroyLabels(labels);
+	DestroyLabels(&labels);
+        
 	return 0;
 }
 

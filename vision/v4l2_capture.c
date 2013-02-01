@@ -291,6 +291,7 @@ queryctrl.id = V4L2_CID_HUE ;
 		}
 
 
+        usleep(100);
 	//fine 
 return 0;
 }
